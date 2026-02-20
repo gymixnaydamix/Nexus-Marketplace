@@ -1,0 +1,9 @@
+
+{
+  "name": "Nexus Marketplace OS",
+  "description": "A 2035-grade, manual-first marketplace platform featuring an modular 4-zone layout, advanced rule engine, role-based access control, and multi-world configuration (Electronics, Cars, Real Estate).",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nexus Marketplace OS | 2035 Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050508;
+            --nexus-purple: #4c1d95;
+            --nexus-purple-bright: #a78bfa;
+            --glass-bg: rgba(30, 30, 35, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --subnav-bg: #0c0c14;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: #fafafa;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #root {
+            height: 100%;
+            width: 100%;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* High-Density HUD Grid */
+        .hud-grid {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.015) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(160%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* 2035 Refined Geometry */
+        .os-container {
+            border-radius: 2rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .os-container { border-radius: 1.25rem; }
+        }
+
+        /* Perspective Icons */
+        .preserve-3d { transform-style: preserve-3d; }
+        .icon-obj { filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4)); }
+
+        .ui-transition { transition: all 0.3s ease; }
+        
+        .subnav-glow {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.42.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased hud-grid">
+    <div id="root"></div>
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+      <defs>
+        <filter id="nexus-glow-vibrant" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="glow" />
+          <feColorMatrix in="glow" type="saturate" values="2" result="saturate" />
+          <feMerge>
+            <feMergeNode in="saturate" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="atomic-grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="3" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        </filter>
+      </defs>
+    </svg>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
